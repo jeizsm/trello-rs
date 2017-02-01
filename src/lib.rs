@@ -9,11 +9,11 @@ pub mod list;
 pub mod card;
 pub mod label;
 
-pub type Client = client::Client;
-pub type Board = board::Board;
-pub type List = list::List;
-pub type Card = card::Card;
-pub type Label = label::Label;
+pub use client::Client;
+pub use board::Board;
+pub use list::List;
+pub use card::Card;
+pub use label::Label;
 
 #[derive(PartialEq, Debug)]
 pub enum Error {
@@ -22,5 +22,5 @@ pub enum Error {
     TooManyRequests,
     InvalidRequest(String),
     Json(String),
-    Unknown(String)
+    Unknown(String),
 }
